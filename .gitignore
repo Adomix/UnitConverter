@@ -12,3 +12,5 @@ Converter/App\.config
 Converter/ConversionForm\.resx
 
 Converter/ConversionForm\.Designer\.cs
+
+\.vs/

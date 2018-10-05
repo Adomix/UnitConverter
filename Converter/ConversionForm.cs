@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Converter
@@ -21,7 +22,7 @@ namespace Converter
             PointB = new Point(312, 71);
         }
 
-        private void InputBox_TextChanged(object sender, EventArgs e)
+        private async void InputBox_TextChanged(object sender, EventArgs e)
         {
             if (decimal.TryParse(InputBox.Text, out var result))
             {
@@ -29,7 +30,14 @@ namespace Converter
             }
             else
             {
-                InputBox.Undo();
+                if (InputBox.Text.Length >= 1)
+                {
+                    var currentColor = InputBox.BackColor;
+                    InputBox.BackColor = Color.Red;
+                    await Task.Delay(250);
+                    InputBox.Undo();
+                    InputBox.BackColor = currentColor;
+                }
             }
         }
 
