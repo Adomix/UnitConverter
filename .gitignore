@@ -1,0 +1,14 @@
+
+packages/
+
+Converter/bin/
+
+Converter/obj/
+
+Converter/Properties/
+
+Converter/App\.config
+
+Converter/ConversionForm\.resx
+
+Converter/ConversionForm\.Designer\.cs
